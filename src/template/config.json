@@ -1,0 +1,84 @@
+{
+    "auth": {
+        "collection": "users",
+        "secret": "your-primary-secret",
+        "refreshsecret": "your-secondary-secret",
+        "username": "username",
+        "password": "password",
+        "access": 900,
+        "refresh": 31536000
+    },
+    "collections": {
+        "users": {
+            "schema": {
+                "username": {
+                    "type": "string",
+                    "unique": true
+                },
+                "password": {
+                    "type": "hash"
+                },
+                "permissions": {
+                    "type": "array",
+                    "default": [
+                        "user"
+                    ]
+                }
+            },
+            "permissions": {
+                "*": {
+                    "post": true
+                },
+                "user": {
+                    "get": {
+                        "q": {
+                            "_id": "$.auth._id"
+                        },
+                        "project": "-password"
+                    },
+                    "patch": {
+                        "pick": [
+                            "username"
+                        ],
+                        "q": {
+                            "_id": "$.auth._id"
+                        },
+                        "io": {
+                            "$._id": [
+                                "_id"
+                            ],
+                            "admin": true
+                        }
+                    }
+                },
+                "admin": {
+                    "get": true,
+                    "post": {
+                        "io": {
+                            "$._id": [
+                                "_id"
+                            ],
+                            "admin": true
+                        }
+                    },
+                    "patch": {
+                        "io": {
+                            "$._id": [
+                                "_id"
+                            ],
+                            "admin": true
+                        }
+                    },
+                    "delete": {
+                        "io": {
+                            "$._id": [
+                                "_id"
+                            ],
+                            "admin": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

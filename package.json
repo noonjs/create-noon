@@ -1,0 +1,25 @@
+{
+  "name": "create-noon",
+  "version": "0.0.7",
+  "main": "dist/index.cjs",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "create-noon": "dist/index.cjs"
+  },
+  "scripts": {
+    "build": "npx unbuild && node scripts/copy-templates.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noonjs/create-noon.git"
+  },
+  "author": "kav3",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "noonjs": "^0.0.6",
+    "readline": "^1.3.0"
+  }
+}

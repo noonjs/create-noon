@@ -1,0 +1,21 @@
+{
+    "name": "my-noonjs-app",
+    "version": "1.0.0",
+    "main": "dist/index.cjs",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "nodemon src/index.ts",
+        "build": "npx unbuild"
+    },
+    "dependencies": {
+        "noonjs": "^0.0.6"
+    },
+    "devDependencies": {
+        "unbuild": "^3.5.0",
+        "nodemon": "^3.0.2",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.0.0"
+    }
+}
