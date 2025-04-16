@@ -9,9 +9,6 @@
         "dev": "nodemon src/index.ts",
         "build": "npx unbuild"
     },
-    "dependencies": {
-        "noonjs": "^0.0.6"
-    },
     "devDependencies": {
         "unbuild": "^3.5.0",
         "nodemon": "^3.0.2",

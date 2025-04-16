@@ -51,7 +51,7 @@ async function main() {
             await writeFileSafe(destPath, content)
         }
 
-        execSync(`npm install --loglevel=error`, {
+        execSync(`npm install noonjs@latest --loglevel=error`, {
             cwd: join(process.cwd(), name),
             stdio: 'inherit'
         })
