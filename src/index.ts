@@ -41,6 +41,7 @@ async function main() {
             { src: 'template/config.json', dest: 'config.json' },
             { src: 'template/package.json', dest: 'package.json' },
             { src: 'template/tsconfig.json', dest: 'tsconfig.json' },
+            { src: 'template/.git-ignore', dest: '.gitignore' }
         ]) {
             const destPath = join(process.cwd(), name, file.dest);
 
